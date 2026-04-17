@@ -1,0 +1,31 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Env
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode
