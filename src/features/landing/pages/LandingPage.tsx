@@ -3,6 +3,7 @@ import { LandingCommunity } from "../components/LandingCommunity";
 import { LandingFeatures } from "../components/LandingFeatures";
 import { LandingHero } from "../components/LandingHero";
 import { LandingHowItWorks } from "../components/LandingHowItWorks";
+import { LandingTrust } from "../components/LandingTrust";
 
 function LandingPage() {
     return (
@@ -11,6 +12,7 @@ function LandingPage() {
             <LandingHowItWorks />
             <LandingFeatures />
             <LandingCommunity />
+            <LandingTrust />
             <LandingCTA />
         </>
     );

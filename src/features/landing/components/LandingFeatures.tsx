@@ -19,8 +19,8 @@ const featureItems = [
 
 export function LandingFeatures() {
     return (
-        <section id="features" aria-labelledby="features-title">
-            <h2 id="features-title">Qué puedes hacer dentro de Recipes Social</h2>
+        <section className="section-general" aria-labelledby="features-title">
+            <h2>Qué puedes hacer dentro de Recipes Social</h2>
             <p>
                 La plataforma reúne en una misma experiencia la autenticación, la publicación de contenido y la
                 interacción social alrededor de la cocina.

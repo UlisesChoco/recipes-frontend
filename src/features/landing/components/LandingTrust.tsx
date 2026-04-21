@@ -1,7 +1,7 @@
 const trustPoints = [
     {
         title: "Sesión protegida",
-        description: "El acceso por JWT encaja con un flujo de autenticación claro para usuarios registrados.",
+        description: "El acceso a la plataforma se compone por una autenticación robusta, que garantiza la seguridad de los perfiles y su contenido.",
     },
     {
         title: "Contenido controlado por usuario",
@@ -15,8 +15,8 @@ const trustPoints = [
 
 export function LandingTrust() {
     return (
-        <section id="trust" aria-labelledby="trust-title">
-            <h2 id="trust-title">Seguridad y confianza en la experiencia</h2>
+        <section className="section-general" aria-labelledby="trust-title">
+            <h2>Seguridad y confianza en la experiencia</h2>
             <p>
                 La aplicación está pensada alrededor de usuarios autenticados, por lo que la landing introduce desde
                 el inicio una base clara sobre identidad, publicación y participación.

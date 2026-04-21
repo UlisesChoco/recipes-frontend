@@ -6,8 +6,8 @@ const communityPoints = [
 
 export function LandingCommunity() {
     return (
-        <section id="community" aria-labelledby="community-title">
-            <h2 id="community-title">Una comunidad centrada en compartir conocimiento culinario</h2>
+        <section className="section-general" aria-labelledby="community-title">
+            <h2>Una comunidad centrada en compartir conocimiento culinario</h2>
             <p>
                 La propuesta de valor no está solo en almacenar recetas, sino en convertir cada publicación en un
                 punto de encuentro para descubrir técnicas, ideas y estilos de cocina distintos.
