@@ -12,6 +12,9 @@ type CreateRecipeFormFieldsProps = {
     onChangeTitle: (value: string) => void;
     onChangeDescription: (value: string) => void;
     onChangeImage: (file: File | null) => void;
+    imageRequired?: boolean;
+    currentImageName?: string;
+    currentImageLabel?: string;
 };
 
 export function CreateRecipeFormFields({
@@ -20,6 +23,9 @@ export function CreateRecipeFormFields({
     onChangeTitle,
     onChangeDescription,
     onChangeImage,
+    imageRequired = true,
+    currentImageName,
+    currentImageLabel = "Imagen actual",
 }: CreateRecipeFormFieldsProps) {
     return (
         <fieldset>
@@ -58,9 +64,10 @@ export function CreateRecipeFormFields({
                     type="file"
                     accept="image/*"
                     onChange={(event) => onChangeImage(event.target.files?.[0] ?? null)}
-                    required
+                    required={imageRequired}
                 />
                 {values.imageFile && <p>Archivo seleccionado: {values.imageFile.name}</p>}
+                {!values.imageFile && currentImageName && <p>{currentImageLabel}: {currentImageName}</p>}
                 {errors.imageFile && <p role="alert">{errors.imageFile}</p>}
             </div>
         </fieldset>

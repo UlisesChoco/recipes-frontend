@@ -1,3 +1,4 @@
+import { AppLink } from "../../shared/components/AppLink";
 import { buildRecipeImageSrc } from "../service/recipes.service";
 import type { PublicRecipe } from "../service/recipe.types";
 
@@ -21,6 +22,10 @@ export function PublicRecipeCard({ recipe }: PublicRecipeCardProps) {
                 <img src={buildRecipeImageSrc(recipe.image)} alt={`Imagen de la receta ${recipe.title}`} />
                 <figcaption>Archivo de imagen: {recipe.image}</figcaption>
             </figure>
+
+            <AppLink to={`/recipes/${recipe.id}`} variant="cta">
+                Ver detalles
+            </AppLink>
 
             <dl>
                 {/* el id en la ui es temporal; por ahora lo muestro para debugging d: */}

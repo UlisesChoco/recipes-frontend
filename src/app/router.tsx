@@ -9,6 +9,7 @@ import { PublicRecipes } from "../features/recipes/pages/PublicRecipes";
 import { MainLayout } from "./layout/MainLayout";
 import { CreateRecipe } from "../features/recipes/pages/CreateRecipe";
 import { MyRecipes } from "../features/recipes/pages/MyRecipes";
+import { RecipeDetails } from "../features/recipes/pages/RecipeDetails";
 
 export function AppRouter() {
     return (
@@ -27,6 +28,8 @@ export function AppRouter() {
                     <Route path="/recipes" element={<PublicRecipes />} />
                     <Route path="/recipes/me" element={<MyRecipes />} />
                     <Route path="/recipes/new" element={<CreateRecipe />} />
+                    <Route path="/recipes/me/:id" element={<RecipeDetails />} />
+                    <Route path="/recipes/:id" element={<RecipeDetails />} />
                 </Route>
             </Route>
         </Routes>
