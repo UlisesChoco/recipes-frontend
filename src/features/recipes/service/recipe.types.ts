@@ -39,6 +39,17 @@ export type RecipeRating = {
     user: RecipeAuthor;
 };
 
+export type CreateRecipeRatingRequest = {
+    score: number;
+    comment: string;
+    recipeId: number;
+};
+
+export type CreateRecipeRatingResponse = {
+    score: number;
+    comment: string;
+};
+
 export type RecipesApiErrorPayload = {
     message?: string | string[];
     error?: string;

@@ -1,5 +1,7 @@
 import type { CreateRecipeRequest, RecipeWithIngredientsResponse } from "./create-recipe.types";
 import type {
+    CreateRecipeRatingRequest,
+    CreateRecipeRatingResponse,
     MyRecipe,
     PublicRecipe,
     RecipeDetails,
@@ -173,4 +175,32 @@ export async function deleteRecipe(token: string, recipeId: number): Promise<voi
 
         throw new Error(normalizeApiError(response.status, payload));
     }
+}
+
+export async function createRecipeRating(
+    token: string,
+    payload: CreateRecipeRatingRequest
+): Promise<CreateRecipeRatingResponse> {
+    const response = await fetch(`${API_BASE_URL}/ratings`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+        let errorPayload: RecipesApiErrorPayload | null = null;
+
+        try {
+            errorPayload = (await response.json()) as RecipesApiErrorPayload;
+        } catch {
+            errorPayload = null;
+        }
+
+        throw new Error(normalizeApiError(response.status, errorPayload));
+    }
+
+    return (await response.json()) as CreateRecipeRatingResponse;
 }

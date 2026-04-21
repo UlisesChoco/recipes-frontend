@@ -1,5 +1,6 @@
 import { useRecipeDetailsPage } from "../hooks/useRecipeDetailsPage";
 import { RecipeDetailsEditorForm } from "../components/RecipeDetailsEditorForm";
+import { RecipeRateForm } from "../components/RecipeRateForm";
 import { RecipeDetailsSummary } from "../components/RecipeDetailsSummary";
 import { RecipeRatingsSection } from "../components/RecipeRatingsSection";
 
@@ -31,6 +32,7 @@ export function RecipeDetails() {
         handleChangeImageFile,
         handleChangeIngredient,
         handleSubmit,
+        refetch,
     } = recipeDetails;
 
     if (!isValidRecipeId) {
@@ -96,7 +98,9 @@ export function RecipeDetails() {
                     handleChangeIngredient={handleChangeIngredient}
                     handleSubmit={handleSubmit}
                 />
-            ) : null}
+            ) : (
+                <RecipeRateForm recipeId={recipe.id} onRateSuccess={() => void refetch()} />
+            )}
         </section>
     );
 }
