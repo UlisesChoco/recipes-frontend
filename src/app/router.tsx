@@ -6,6 +6,7 @@ import { RegisterPage } from "../features/auth/pages/RegisterPage";
 import { LoginPage } from "../features/auth/pages/LoginPage";
 import { JWTProtectedRoute } from "./guard/JWTProtectedRoute";
 import { PublicRecipes } from "../features/recipes/pages/PublicRecipes";
+import { MainLayout } from "./layout/MainLayout";
 
 export function AppRouter() {
     return (
@@ -20,7 +21,9 @@ export function AppRouter() {
             </Route>
 
             <Route element={<JWTProtectedRoute />}>
-                <Route path="/recipes" element={<PublicRecipes />} />
+                <Route element={<MainLayout />}>
+                    <Route path="/recipes" element={<PublicRecipes />} />
+                </Route>
             </Route>
         </Routes>
     )
