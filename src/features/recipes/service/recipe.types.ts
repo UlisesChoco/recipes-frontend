@@ -33,6 +33,15 @@ export type RecipeDetails = {
     ingredients: RecipeIngredient[];
 };
 
+export type PublicRecipeDetails = {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    user: RecipeAuthor;
+    ingredients: RecipeIngredient[];
+};
+
 export type RecipeRating = {
     score: number;
     comment: string;

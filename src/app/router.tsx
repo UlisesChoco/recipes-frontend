@@ -10,12 +10,14 @@ import { MainLayout } from "./layout/MainLayout";
 import { CreateRecipe } from "../features/recipes/pages/CreateRecipe";
 import { MyRecipes } from "../features/recipes/pages/MyRecipes";
 import { RecipeDetails } from "../features/recipes/pages/RecipeDetails";
+import { PublicRecipeDetails } from "../features/recipes/pages/PublicRecipeDetails";
 
 export function AppRouter() {
     return (
         <Routes>
             <Route element={<LandingLayout />}>
                 <Route path="/" element={<LandingPage />} />
+                <Route path="/recipes/public/:id" element={<PublicRecipeDetails />} />
             </Route>
 
             <Route element={<AuthLayout />}>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useRecipeDetailsPage } from "../hooks/useRecipeDetailsPage";
 import { RecipeDetailsEditorForm } from "../components/RecipeDetailsEditorForm";
 import { RecipeRateForm } from "../components/RecipeRateForm";
@@ -5,6 +6,8 @@ import { RecipeDetailsSummary } from "../components/RecipeDetailsSummary";
 import { RecipeRatingsSection } from "../components/RecipeRatingsSection";
 
 export function RecipeDetails() {
+    const [shareStatus, setShareStatus] = useState("");
+
     const {
         pageTitle,
         pageDescription,
@@ -34,6 +37,21 @@ export function RecipeDetails() {
         handleSubmit,
         refetch,
     } = recipeDetails;
+
+    const handleShare = async (recipeId: number) => {
+        const publicRecipeUrl = `${window.location.origin}/recipes/public/${recipeId}`;
+
+        try {
+            if (!navigator.clipboard?.writeText) {
+                throw new Error("Clipboard API no disponible");
+            }
+
+            await navigator.clipboard.writeText(publicRecipeUrl);
+            setShareStatus("Link copiado al portapapeles.");
+        } catch {
+            setShareStatus("No se pudo copiar el link.");
+        }
+    };
 
     if (!isValidRecipeId) {
         return (
@@ -76,6 +94,10 @@ export function RecipeDetails() {
             <header>
                 <h1 id="recipe-details-title">{pageTitle}</h1>
                 <p>{pageDescription}</p>
+                <button type="button" onClick={() => void handleShare(recipe.id)}>
+                    Compartir
+                </button>
+                {shareStatus ? <p>{shareStatus}</p> : null}
             </header>
 
             <RecipeDetailsSummary recipe={recipe} authorFullName={authorFullName} />

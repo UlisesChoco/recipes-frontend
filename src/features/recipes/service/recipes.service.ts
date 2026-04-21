@@ -3,6 +3,7 @@ import type {
     CreateRecipeRatingRequest,
     CreateRecipeRatingResponse,
     MyRecipe,
+    PublicRecipeDetails,
     PublicRecipe,
     RecipeDetails,
     RecipeRating,
@@ -94,6 +95,26 @@ export async function getRecipeById(token: string, recipeId: number): Promise<Re
     }
 
     return (await response.json()) as RecipeDetails;
+}
+
+export async function getPublicRecipeById(recipeId: number): Promise<PublicRecipeDetails> {
+    const response = await fetch(`${API_BASE_URL}/recipes/public/${recipeId}`, {
+        method: "GET",
+    });
+
+    if (!response.ok) {
+        let payload: RecipesApiErrorPayload | null = null;
+
+        try {
+            payload = (await response.json()) as RecipesApiErrorPayload;
+        } catch {
+            payload = null;
+        }
+
+        throw new Error(normalizeApiError(response.status, payload));
+    }
+
+    return (await response.json()) as PublicRecipeDetails;
 }
 
 export async function getRecipeRatings(token: string, recipeId: number): Promise<RecipeRating[]> {
