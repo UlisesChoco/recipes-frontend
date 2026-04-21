@@ -1,10 +1,10 @@
 import { AppLink } from "./AppLink";
 
 const footerLinks = [
-    { label: "Cómo funciona", href: "#how-it-works" },
-    { label: "Qué puedes hacer", href: "#features" },
-    { label: "Comunidad", href: "#community" },
-    { label: "Seguridad", href: "#trust" },
+    { label: "Cómo funciona", href: "/#how-it-works" },
+    { label: "Qué puedes hacer", href: "/#features" },
+    { label: "Comunidad", href: "/#community" },
+    { label: "Seguridad", href: "/#trust" },
 ];
 
 export function Footer() {
