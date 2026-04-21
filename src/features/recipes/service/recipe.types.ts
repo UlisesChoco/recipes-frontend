@@ -11,6 +11,13 @@ export type PublicRecipe = {
     user: RecipeAuthor;
 };
 
+export type MyRecipe = {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+};
+
 export type RecipesApiErrorPayload = {
     message?: string | string[];
     error?: string;
