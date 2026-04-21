@@ -8,7 +8,7 @@ type RecipeDetailsSummaryProps = {
 
 export function RecipeDetailsSummary({ recipe, authorFullName }: RecipeDetailsSummaryProps) {
     return (
-        <article>
+        <article className="recipe-card">
             <header>
                 <h2>{recipe.title}</h2>
                 <p>Autor/a: {authorFullName}</p>
@@ -18,7 +18,6 @@ export function RecipeDetailsSummary({ recipe, authorFullName }: RecipeDetailsSu
 
             <figure>
                 <img src={buildRecipeImageSrc(recipe.image)} alt={`Imagen de la receta ${recipe.title}`} />
-                <figcaption>Archivo de imagen: {recipe.image}</figcaption>
             </figure>
 
             <section aria-labelledby="recipe-ingredients-title">

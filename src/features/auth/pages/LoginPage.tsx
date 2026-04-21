@@ -3,7 +3,7 @@ import { LoginForm } from "../components/LoginForm";
 
 export function LoginPage() {
     return (
-        <section aria-labelledby="login-page-title">
+        <section className="section-general" aria-labelledby="login-page-title">
             <header>
                 <h1 id="login-page-title">Iniciar sesion</h1>
                 <p>Accede con tu cuenta para publicar recetas y participar con calificaciones.</p>

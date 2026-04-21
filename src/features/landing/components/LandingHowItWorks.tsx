@@ -15,8 +15,8 @@ const steps = [
 
 export function LandingHowItWorks() {
     return (
-        <section id="how-it-works" aria-labelledby="how-it-works-title">
-            <h2 id="how-it-works-title">Cómo funciona la plataforma</h2>
+        <section className="section-general" aria-labelledby="how-it-works-title">
+            <h2>Cómo funciona la plataforma</h2>
             <p>
                 La experiencia está pensada para ser simple: entras, publicas, descubres contenido nuevo y recibes
                 retroalimentación de otras personas.

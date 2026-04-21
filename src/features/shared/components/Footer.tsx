@@ -9,13 +9,15 @@ const footerLinks = [
 
 export function Footer() {
     return (
-        <footer>
-            <div>
-                <p>Recipes Social</p>
-                <p>Un punto de encuentro para personas que aman cocinar y compartir recetas.</p>
+        <footer className="app-footer">
+            <div className="app-footer__brand">
+                <p className="app-footer__title">Recipes Social</p>
+                <p className="app-footer__description">
+                    Un punto de encuentro para personas que aman cocinar y compartir recetas.
+                </p>
             </div>
 
-            <nav aria-label="Enlaces del pie de página">
+            <nav className="app-footer__nav" aria-label="Enlaces del pie de página">
                 <ul>
                     {footerLinks.map((item) => (
                         <li key={item.href}>
@@ -27,7 +29,7 @@ export function Footer() {
                 </ul>
             </nav>
 
-            <p>&copy; 2026 Recipes Social. Todos los derechos reservados.</p>
+            <p className="app-footer__copyright">&copy; 2026 Recipes Social. Todos los derechos reservados.</p>
         </footer>
     );
 }

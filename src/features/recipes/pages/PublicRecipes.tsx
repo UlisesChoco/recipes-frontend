@@ -5,7 +5,7 @@ export function PublicRecipes() {
     const { recipes, isLoading, error, refetch } = usePublicRecipes();
 
     return (
-        <section aria-labelledby="public-recipes-title">
+        <section className="section-general" aria-labelledby="public-recipes-title">
             <header>
                 <h1 id="public-recipes-title">Listado de recetas publicas</h1>
                 <p>

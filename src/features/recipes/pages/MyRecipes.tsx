@@ -5,7 +5,7 @@ export function MyRecipes() {
     const { recipes, isLoading, error, refetch } = useMyRecipes();
 
     return (
-        <section aria-labelledby="my-recipes-title">
+        <section className="section-general" aria-labelledby="my-recipes-title">
             <header>
                 <h1 id="my-recipes-title">Mis recetas</h1>
                 <p>Aqui puedes ver todas las recetas que has creado.</p>

@@ -13,12 +13,10 @@ export function MyRecipeCard({ recipe, onDeleteSuccess }: MyRecipeCardProps) {
     const { isDeleting, deleteError, handleDelete } = useDeleteRecipe(onDeleteSuccess);
 
     return (
-        <article>
+        <article className="recipe-card">
             <h2>{recipe.title}</h2>
             <p>{recipe.description}</p>
             <img src={buildRecipeImageSrc(recipe.image)} alt={`Imagen de la receta ${recipe.title}`} />
-            <p>Archivo imagen: {recipe.image}</p>
-            <p>ID: {recipe.id}</p>
 
             <div>
                 <AppLink to={`/recipes/me/${recipe.id}`} variant="cta">

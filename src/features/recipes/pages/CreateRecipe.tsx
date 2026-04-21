@@ -2,7 +2,7 @@ import { CreateRecipeForm } from "../components/CreateRecipeForm";
 
 export function CreateRecipe() {
     return (
-        <section aria-labelledby="create-recipe-title">
+        <section className="section-general" aria-labelledby="create-recipe-title">
             <header>
                 <h1 id="create-recipe-title">Crear nueva receta</h1>
                 <p>

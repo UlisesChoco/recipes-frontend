@@ -6,8 +6,8 @@ type RecipeRatingsSectionProps = {
 
 export function RecipeRatingsSection({ ratings }: RecipeRatingsSectionProps) {
     return (
-        <section aria-labelledby="recipe-ratings-title">
-            <h3 id="recipe-ratings-title">Calificaciones</h3>
+        <section className="recipe-card" aria-labelledby="recipe-ratings-title">
+            <h3>Calificaciones</h3>
 
             {ratings.length === 0 ? (
                 <p>Esta receta aun no tiene calificaciones.</p>
@@ -17,7 +17,7 @@ export function RecipeRatingsSection({ ratings }: RecipeRatingsSectionProps) {
                         const ratingAuthor = `${rating.user.name} ${rating.user.surname}`.trim();
 
                         return (
-                            <article key={`${ratingAuthor}-${rating.score}-${index}`}>
+                            <article className="recipe-card" key={`${ratingAuthor}-${rating.score}-${index}`}>
                                 <header>
                                     <p>
                                         <strong>{rating.score}/5</strong> por {ratingAuthor}

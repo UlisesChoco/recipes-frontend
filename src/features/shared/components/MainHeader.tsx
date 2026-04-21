@@ -11,15 +11,15 @@ export function MainHeader() {
     };
 
     return (
-        <header>
-            <nav aria-label="Navegación principal de la aplicación">
-                <div>
+        <header className="app-main-header">
+            <nav className="app-main-header__nav" aria-label="Navegación principal de la aplicación">
+                <div className="app-main-header__brand">
                     <AppLink to="/recipes" variant="nav">
                         Recipes Social
                     </AppLink>
                 </div>
 
-                <ul>
+                <ul className="app-main-header__links">
                     <li>
                         <AppLink to="/recipes" variant="nav">
                             Recetas públicas
@@ -37,7 +37,7 @@ export function MainHeader() {
                     </li>
                 </ul>
 
-                <button type="button" onClick={handleLogout}>
+                <button className="app-main-header__logout" type="button" onClick={handleLogout}>
                     Cerrar sesión
                 </button>
             </nav>

@@ -72,7 +72,7 @@ export function RecipeDetails() {
     }
 
     return (
-        <section aria-labelledby="recipe-details-title">
+        <section className="section-general" aria-labelledby="recipe-details-title">
             <header>
                 <h1 id="recipe-details-title">{pageTitle}</h1>
                 <p>{pageDescription}</p>

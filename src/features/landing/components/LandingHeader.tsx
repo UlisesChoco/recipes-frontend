@@ -9,16 +9,17 @@ const navigationItems = [
 
 export function LandingHeader() {
     return (
-        <header>
-            <div>
-                <AppLink to="/" ariaLabel="Ir al inicio de Recipes Social" variant="nav">
-                    Recipes Social
-                </AppLink>
-                <p>Una red social para descubrir, compartir y valorar recetas.</p>
-            </div>
+        <header className="app-main-header">
+            <nav className="app-main-header__nav" aria-label="Navegación principal">
+                <div className="app-main-header__brand">
+                    <AppLink to="/" ariaLabel="Ir al inicio de Recipes Social" variant="nav">
+                        Recipes Social
+                    </AppLink>
+                    <p>Una red social para descubrir, compartir y valorar recetas.</p>
+                </div>
 
-            <nav aria-label="Navegación principal">
-                <ul>
+                
+                <ul className="app-main-header__links">
                     {navigationItems.map((item) => (
                         <li key={item.href}>
                             <AppLink to={item.href} variant="nav">
@@ -27,16 +28,21 @@ export function LandingHeader() {
                         </li>
                     ))}
                 </ul>
-            </nav>
+                
 
-            <div>
-                <AppLink to="/login" variant="cta">
-                    Iniciar sesión
-                </AppLink>
-                <AppLink to="/register" variant="cta">
-                    Crear cuenta
-                </AppLink>
-            </div>
+                <ul className="app-main-header__links">
+                    <li>
+                        <AppLink to="/login" variant="nav">
+                            Iniciar sesión
+                        </AppLink>
+                    </li>
+                    <li>
+                        <AppLink to="/register" variant="nav">
+                            Crear cuenta
+                        </AppLink>
+                    </li>
+                </ul>
+            </nav>
         </header>
     );
 }

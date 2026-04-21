@@ -3,7 +3,7 @@ import { RegisterForm } from "../components/RegisterForm";
 
 export function RegisterPage() {
     return (
-        <section aria-labelledby="register-page-title">
+        <section className="section-general" aria-labelledby="register-page-title">
             <header>
                 <h1 id="register-page-title">Crear cuenta</h1>
                 <p>Registra tu perfil para compartir recetas y recibir feedback de la comunidad.</p>
